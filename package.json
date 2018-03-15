@@ -1,0 +1,36 @@
+{
+  "name": "swaggo",
+  "version": "1.0.0",
+  "description": "swaggo official site",
+  "main": "index.html",
+  "scripts": {
+    "gitbook:prepare": "gitbook install",
+    "gitbook:watch": "npm run gitbook:prepare && gitbook serve",
+    "gitbook:build": "npm run gitbook:prepare && rm -rf _book && gitbook build",
+    "gitbook:publish": "gh-pages -d _book -m 'Auto publish book'",
+    "gitbook:pdf": "gitbook pdf . ./_book/swaggo.pdf",
+    "gitbook:epub": "gitbook epub . ./_book/swaggo.epub",
+    "gitbook:mobi": "gitbook mobi . ./_book/swaggo.mobi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swaggo/swaggo.io.git"
+  },
+  "keywords": [
+    "golang",
+    "swaggo"
+  ],
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  },
+  "author": "swaggo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swaggo/swag/issues"
+  },
+  "homepage": "https://github.com/swaggo/swag",
+  "dependencies": {
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-github": "^2.0.0"
+  }
+}

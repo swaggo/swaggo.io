@@ -1,0 +1,12 @@
+*~
+*.log
+*.pdf
+*.epub
+*.mobi
+
+.vagrant/
+_book/
+node_modules/
+tmp*/
+package-lock.json
+.DS_Store
