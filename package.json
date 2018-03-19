@@ -4,6 +4,7 @@
   "description": "swaggo official site",
   "main": "index.html",
   "scripts": {
+    "test": "echo \"Error: no test specified\" ",
     "gitbook:prepare": "gitbook install",
     "gitbook:watch": "npm run gitbook:prepare && gitbook serve",
     "gitbook:build": "npm run gitbook:prepare && rm -rf _book && gitbook build",
@@ -21,7 +22,8 @@
     "swaggo"
   ],
   "devDependencies": {
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "^2.3.2",
+    "svgexport": "*"
   },
   "author": "swaggo",
   "license": "MIT",

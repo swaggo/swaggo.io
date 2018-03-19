@@ -17,18 +17,18 @@
 ## Mime Types
 
 ```
-  json
-  application/json
-  xml
-  text/xml
-  plain
-  text/plain
-  html
-  text/html
-  mpfd
-  multipart/form-data
-  json-api
-  application/vnd.api+json
+json
+application/json
+xml
+text/xml
+plain
+text/plain
+html
+text/html
+mpfd
+multipart/form-data
+json-api
+application/vnd.api+json
 ```
 
 ## Param Type

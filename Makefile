@@ -5,7 +5,7 @@ SHELL := /bin/bash
 all: install build
 
 install: # install gitbook-cli
-	npm install 
+	npm install
 
 prepare:
 	npm run gitbook:prepare
@@ -31,14 +31,12 @@ deploy:
 
 publish: build pdf epub mobi
 	cd _book && \
-	git config --global user.name "publisher" && \
-	git config --global user.email "publisher@git.hub" && \
 	git init && \
 	git commit --allow-empty -m 'update gh-pages' && \
 	git checkout -b gh-pages && \
 	git add . && \
 	git commit -am 'update gh-pages' && \
-	git push https://github.com/swaggo/swaggo.io gh-pages --force \
+	git push git@github.com:swaggo/swaggo.io.git gh-pages --force
 
 clean:
 	rm -rf _book
