@@ -13,6 +13,12 @@
 | failure            | Failure response that separated by spaces. `return code`,`{param type}`,`data type`,`comment`             | 
 | router             | Failure response that separated by spaces. `path`,`[httpMethod]`                                          | 
 
+## Example
+
+[celler/controller](https://github.com/swaggo/swag/tree/master/example/celler/controller)
+
+## Limitation
+- Not supported for cross-package models. Only search in project root folder. [See #39](https://github.com/swaggo/swag/issues/39)
 
 ## Mime Types
 
@@ -33,12 +39,54 @@ application/vnd.api+json
 
 ## Param Type
 
-comming soon...
+- object (struct)
+- string (string)
+- integer (int, uint, uint32, uint64)
+- number (float32)
+- boolean (bool)
+- array
 
 ## Data Type
 
-comming soon...
+- string (string)
+- integer (int, uint, uint32, uint64)
+- number (float32)
+- boolean (bool)
+- user defined struct
 
-## Example
+## TIPS
 
-[celler/controller](https://github.com/swaggo/swag/tree/master/example/celler/controller)
+### User defined structure with an array type
+
+```go
+// @Success 200 {array} model.Account <-- This is a user defined struct.
+```
+
+```go
+package model
+
+type Account struct {
+    ID   int    `json:"id" example:"1"`
+    Name string `json:"name" example:"account name"`
+}
+```
+
+### Use multiple path params
+
+```go
+/// ...
+// @Param group_id path int true "Group ID"
+// @Param account_id path int true "Account ID"
+// ...
+// @Router /examples/groups/{group_id}/accounts/{account_id} [get]
+```
+
+### Example value of struct
+
+```go
+type Account struct {
+    ID   int    `json:"id" example:"1"`
+    Name string `json:"name" example:"account name"`
+    PhotoUrls []string `json:"photo_urls" example:"http://test/image/1.jpg,http://test/image/2.jpg"`
+}
+```
