@@ -41,10 +41,3 @@ publish: build pdf epub mobi
 clean:
 	rm -rf _book
 	rm -rf node_modules
-
-travis-deploy:
-	sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
-	sudo ln -s /opt/calibre/ebook-convert /usr/local/bin/
-	$(MAKE) install
-	$(MAKE) publish
-
