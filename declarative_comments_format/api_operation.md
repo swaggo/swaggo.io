@@ -1,6 +1,6 @@
 # API Operation
 
-| annotation         | description                                                                                               | 
+| annotation         | description                                                                                               |
 |--------------------|-----------------------------------------------------------------------------------------------------------|
 | description        | A verbose explanation of the operation behavior.                                                          |
 | id                 | A unique string used to identify the operation. Must be unique among all API operations.                  |
@@ -8,10 +8,11 @@
 | summary            | A short summary of what the operation does.                                                               |
 | accept             | A list of MIME types the APIs can consume. Value MUST be as described under [Mime Types](#mime-types).    |
 | produce            | A list of MIME types the APIs can produce. Value MUST be as described under [Mime Types](#mime-types).    |
-| param              | Parameters that separated by spaces. `param name`,`param type`,`data type`,`is mandatory?`,`comment`      | 
-| success            | Success response that separated by spaces. `return code`,`{param type}`,`data type`,`comment`             | 
-| failure            | Failure response that separated by spaces. `return code`,`{param type}`,`data type`,`comment`             | 
-| router             | Failure response that separated by spaces. `path`,`[httpMethod]`                                          | 
+| param              | Parameters that separated by spaces. `param name`,`param type`,`data type`,`is mandatory?`,`comment`      |
+| security           | [Security](#security) to each API operation.                                                                         |
+| success            | Success response that separated by spaces. `return code`,`{param type}`,`data type`,`comment`             |
+| failure            | Failure response that separated by spaces. `return code`,`{param type}`,`data type`,`comment`             |
+| router             | Failure response that separated by spaces. `path`,`[httpMethod]`                                          |
 
 ## Example
 
@@ -35,6 +36,32 @@ mpfd
 multipart/form-data
 json-api
 application/vnd.api+json
+```
+
+## Security
+
+General API info.
+
+```go
+// @securityDefinitions.basic BasicAuth
+
+// @securitydefinitions.oauth2.application OAuth2Application
+// @tokenUrl https://example.com/oauth/token
+// @scope.write Grants write access
+// @scope.admin Grants read and write access to administrative information
+```
+
+Each API operation.
+
+```go
+// @Security ApiKeyAuth
+```
+
+Make it AND condition
+
+```go
+// @Security ApiKeyAuth
+// @Security OAuth2Application[write, admin]
 ```
 
 ## Param Type
