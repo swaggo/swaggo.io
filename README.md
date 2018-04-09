@@ -19,7 +19,7 @@
   <a href="https://godoc.org/github.com/swaggo/swag"><img alt="Go Doc" src="https://godoc.org/github.com/swaggo/swagg?status.svg"></a>
 </p>
 
-<p align="center">gopher image source is <a href="https://github.com/tenntenn/gopher-stickers">tenntenn/gopher-stickers.</a> It has licenses <a href="http://creativecommons.org/licenses/by/3.0/deed.ja">creative commons licensing.</a></p>
+<p align="center">gopher image source is <a href="https://github.com/tenntenn/gopher-stickers">tenntenn/gopher-stickers.</a> It has licenses <a href="http://creativecommons.org/licenses/by/3.0/deed.en">creative commons licensing.</a></p>
  
 ## What is swag?
 swag converts Go annotations to Swagger Documentation 2.0. And provides a variety of builtin [web framework](#supported-web-framework) lib. Let you can quickly integrated in existing golang project(using Swagger UI) .
