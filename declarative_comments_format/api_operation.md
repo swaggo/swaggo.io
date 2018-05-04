@@ -36,6 +36,7 @@ mpfd
 multipart/form-data
 json-api
 application/vnd.api+json
+application/x-json-stream
 ```
 
 ## Security
