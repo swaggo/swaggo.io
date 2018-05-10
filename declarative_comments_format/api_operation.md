@@ -23,21 +23,17 @@
 
 ## Mime Types
 
-```
-json
-application/json
-xml
-text/xml
-plain
-text/plain
-html
-text/html
-mpfd
-multipart/form-data
-json-api
-application/vnd.api+json
-application/x-json-stream
-```
+
+| Mime Type                         | annotation                                                |
+|-----------------------------------|-----------------------------------------------------------|
+| application/json                  | application/json, json                                    |
+| text/xml                          | text/xml, xml                                             |
+| text/plain                        | text/plain, plain                                         |
+| html                              | text/html, html                                           |
+| multipart/form-data               | multipart/form-data, mpfd                                 |
+| application/x-www-form-urlencoded | application/x-www-form-urlencoded, x-www-form-urlencoded  |
+| application/vnd.api+json          | application/vnd.api+json, json-api                        |
+| application/x-json-stream         | application/x-json-stream, json-stream                    |
 
 ## Security
 
