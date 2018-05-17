@@ -34,6 +34,7 @@
 | application/x-www-form-urlencoded | application/x-www-form-urlencoded, x-www-form-urlencoded  |
 | application/vnd.api+json          | application/vnd.api+json, json-api                        |
 | application/x-json-stream         | application/x-json-stream, json-stream                    |
+| application/octet-stream          | application/octet-stream, octet-stream                    |
 
 ## Security
 
