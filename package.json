@@ -22,8 +22,7 @@
     "swaggo"
   ],
   "devDependencies": {
-    "gitbook-cli": "2.3.2",
-    "svgexport": "0.3.2"
+    "gitbook-cli": "2.3.2"
   },
   "author": "swaggo",
   "license": "MIT",
