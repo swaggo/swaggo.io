@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/swaggo/swag",
   "dependencies": {
+    "gitbook-plugin-anchorjs": "^2.0.0",
     "gitbook-plugin-edit-link": "2.0.2",
     "gitbook-plugin-github": "2.0.0"
   }
