@@ -29,8 +29,7 @@ deploy:
 	npm run gitbook:build && npm run gitbook:publish
 	
 
-# publish: build pdf epub mobi
-publish: build epub mobi
+publish: build
 	cd _book && \
 	git init && \
 	git commit --allow-empty -m 'update gh-pages' && \
