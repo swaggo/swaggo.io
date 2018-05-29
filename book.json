@@ -3,7 +3,8 @@
     "plugins": [
         "-sharing",
         "edit-link@2.0.x",
-        "github@2.0.x"
+        "github@2.0.x",
+        "anchorjs"
     ],
     "pluginsConfig": {
         "edit-link": {
@@ -12,6 +13,12 @@
         },
         "github": {
             "url": "https://github.com/swaggo/swag"
+        },
+        "anchorjs": {
+            "icon": "#",
+            "selector": "h1,h2,h3,h4,h5",
+            "placement": "right",
+            "visible": "always"
         }
     }
 }
