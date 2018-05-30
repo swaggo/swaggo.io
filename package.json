@@ -22,8 +22,7 @@
     "swaggo"
   ],
   "devDependencies": {
-    "gitbook-cli": "2.3.2",
-    "svgexport": "0.3.2"
+    "gitbook-cli": "2.3.2"
   },
   "author": "swaggo",
   "license": "MIT",
@@ -32,6 +31,7 @@
   },
   "homepage": "https://github.com/swaggo/swag",
   "dependencies": {
+    "gitbook-plugin-anchorjs": "^2.0.0",
     "gitbook-plugin-edit-link": "2.0.2",
     "gitbook-plugin-github": "2.0.0"
   }
