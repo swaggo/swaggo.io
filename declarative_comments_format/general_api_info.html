@@ -1,0 +1,447 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>General API Info · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="api_operation.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    DeclarativeCommentsFormat
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="general_api_info.html">
+            
+                <a href="general_api_info.html">
+            
+                    
+                    General API Info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="api_operation.html">
+            
+                <a href="api_operation.html">
+            
+                    
+                    API Operation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../cli/">
+            
+                <a href="../cli/">
+            
+                    
+                    CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >General API Info</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="general-api-info">General API Info</h1>
+<table>
+<thead>
+<tr>
+<th>annotation</th>
+<th>description</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td><strong>Required.</strong> The title of the application.</td>
+<td>// @title Swagger Example API</td>
+</tr>
+<tr>
+<td>version</td>
+<td><strong>Required.</strong> Provides the version of the application API.</td>
+<td>// @version 1.0</td>
+</tr>
+<tr>
+<td>description</td>
+<td>A short description of the application.</td>
+<td>// @description This is a sample server celler server.</td>
+</tr>
+<tr>
+<td>termsOfService</td>
+<td>The Terms of Service for the API.</td>
+<td>// @termsOfService <a href="http://swagger.io/terms/" _target="blank">http://swagger.io/terms/</a></td>
+</tr>
+<tr>
+<td>contact.name</td>
+<td>The contact information for the exposed API.</td>
+<td>// @contact.name API Support</td>
+</tr>
+<tr>
+<td>contact.url</td>
+<td>The URL pointing to the contact information. MUST be in the format of a URL.</td>
+<td>// @contact.url <a href="http://www.swagger.io/support" _target="blank">http://www.swagger.io/support</a></td>
+</tr>
+<tr>
+<td>contact.email</td>
+<td>The email address of the contact person/organization. MUST be in the format of an email address.</td>
+<td>// @contact.email support@swagger.io</td>
+</tr>
+<tr>
+<td>license.name</td>
+<td><strong>Required.</strong> The license name used for the API.</td>
+<td>// @license.name Apache 2.0</td>
+</tr>
+<tr>
+<td>license.url</td>
+<td>A URL to the license used for the API. MUST be in the format of a URL.</td>
+<td>// @license.url <a href="http://www.apache.org/licenses/LICENSE-2.0.html" _target="blank">http://www.apache.org/licenses/LICENSE-2.0.html</a></td>
+</tr>
+<tr>
+<td>host</td>
+<td>The host (name or ip) serving the API.</td>
+<td>// @host localhost:8080</td>
+</tr>
+<tr>
+<td>BasePath</td>
+<td>The base path on which the API is served.</td>
+<td>// @BasePath /api/v1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security">Security</h2>
+<table>
+<thead>
+<tr>
+<th>annotation</th>
+<th>description</th>
+<th>parameters</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>securitydefinitions.basic</td>
+<td><a href="https://swagger.io/docs/specification/2-0/authentication/basic-authentication/" _target="blank">Basic</a> auth.</td>
+<td></td>
+<td>// @securityDefinitions.basic BasicAuth</td>
+</tr>
+<tr>
+<td>securitydefinitions.apikey</td>
+<td><a href="https://swagger.io/docs/specification/2-0/authentication/api-keys/" _target="blank">API key</a> auth.</td>
+<td>in, name</td>
+<td>// @securityDefinitions.apikey ApiKeyAuth</td>
+</tr>
+<tr>
+<td>securitydefinitions.oauth2.application</td>
+<td><a href="https://swagger.io/docs/specification/authentication/oauth2/" _target="blank">OAuth2 application</a> auth.</td>
+<td>tokenUrl, scope</td>
+<td>// @securitydefinitions.oauth2.application OAuth2Application</td>
+</tr>
+<tr>
+<td>securitydefinitions.oauth2.implicit</td>
+<td><a href="https://swagger.io/docs/specification/authentication/oauth2/" _target="blank">OAuth2 implicit</a> auth.</td>
+<td>authorizationUrl, scope</td>
+<td>// @securitydefinitions.oauth2.implicit OAuth2Implicit</td>
+</tr>
+<tr>
+<td>securitydefinitions.oauth2.password</td>
+<td><a href="https://swagger.io/docs/specification/authentication/oauth2/" _target="blank">OAuth2 password</a> auth.</td>
+<td>tokenUrl, scope</td>
+<td>// @securitydefinitions.oauth2.password OAuth2Password</td>
+</tr>
+<tr>
+<td>securitydefinitions.oauth2.accessCode</td>
+<td><a href="https://swagger.io/docs/specification/authentication/oauth2/" _target="blank">OAuth2 access code</a> auth.</td>
+<td>tokenUrl, authorizationUrl, scope</td>
+<td>// @securitydefinitions.oauth2.accessCode OAuth2AccessCode</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>parameters annotation</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>in</td>
+<td>// @in header</td>
+</tr>
+<tr>
+<td>name</td>
+<td>// @name Authorization</td>
+</tr>
+<tr>
+<td>tokenUrl</td>
+<td>// @tokenUrl <a href="https://example.com/oauth/token" _target="blank">https://example.com/oauth/token</a></td>
+</tr>
+<tr>
+<td>authorizationurl</td>
+<td>// @authorizationurl <a href="https://example.com/oauth/authorize" _target="blank">https://example.com/oauth/authorize</a></td>
+</tr>
+<tr>
+<td>scope.hoge</td>
+<td>// @scope.write Grants write access</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p><a href="https://github.com/swaggo/swag/blob/master/example/celler/main.go" _target="blank">celler/main.go</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: DeclarativeCommentsFormat">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="api_operation.html" class="navigation navigation-next " aria-label="Next page: API Operation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"General API Info","level":"1.2.1","depth":2,"next":{"title":"API Operation","level":"1.2.2","depth":2,"path":"declarative_comments_format/api_operation.md","ref":"declarative_comments_format/api_operation.md","articles":[]},"previous":{"title":"DeclarativeCommentsFormat","level":"1.2","depth":1,"path":"declarative_comments_format/README.md","ref":"declarative_comments_format/README.md","articles":[{"title":"General API Info","level":"1.2.1","depth":2,"path":"declarative_comments_format/general_api_info.md","ref":"declarative_comments_format/general_api_info.md","articles":[]},{"title":"API Operation","level":"1.2.2","depth":2,"path":"declarative_comments_format/api_operation.md","ref":"declarative_comments_format/api_operation.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.0.x","theme":"default","variables":{},"plugins":["-sharing","edit-link@2.0.x","github@2.0.x","anchorjs"],"pluginsConfig":{"edit-link":{"base":"https://github.com/swaggo/swaggo.io/edit/master/README.md","label":"Edit"},"github":{"url":"https://github.com/swaggo/swag"},"anchorjs":{"icon":"#","selector":"h1,h2,h3,h4,h5","placement":"right","visible":"always"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"declarative_comments_format/general_api_info.md","mtime":"2018-08-09T06:09:36.672Z","type":"markdown"},"gitbook":{"version":"3.0.3","time":"2018-08-09T06:10:45.480Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

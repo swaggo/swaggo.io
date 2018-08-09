@@ -1,0 +1,574 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>API Operation · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../cli/" />
+    
+    
+    <link rel="prev" href="general_api_info.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    DeclarativeCommentsFormat
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="general_api_info.html">
+            
+                <a href="general_api_info.html">
+            
+                    
+                    General API Info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="api_operation.html">
+            
+                <a href="api_operation.html">
+            
+                    
+                    API Operation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../cli/">
+            
+                <a href="../cli/">
+            
+                    
+                    CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >API Operation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="api-operation">API Operation</h1>
+<table>
+<thead>
+<tr>
+<th>annotation</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>description</td>
+<td>A verbose explanation of the operation behavior.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>A unique string used to identify the operation. Must be unique among all API operations.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>A list of tags to each API operation that separated by commas.</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>A short summary of what the operation does.</td>
+</tr>
+<tr>
+<td>accept</td>
+<td>A list of MIME types the APIs can consume. Value MUST be as described under <a href="#mime-types">Mime Types</a>.</td>
+</tr>
+<tr>
+<td>produce</td>
+<td>A list of MIME types the APIs can produce. Value MUST be as described under <a href="#mime-types">Mime Types</a>.</td>
+</tr>
+<tr>
+<td>param</td>
+<td>Parameters that separated by spaces. <code>param name</code>,<code>param type</code>,<code>data type</code>,<code>is mandatory?</code>,<code>comment</code> <code>attribute(optional)</code></td>
+</tr>
+<tr>
+<td>security</td>
+<td><a href="#security">Security</a> to each API operation.</td>
+</tr>
+<tr>
+<td>success</td>
+<td>Success response that separated by spaces. <code>return code</code>,<code>{param type}</code>,<code>data type</code>,<code>comment</code></td>
+</tr>
+<tr>
+<td>failure</td>
+<td>Failure response that separated by spaces. <code>return code</code>,<code>{param type}</code>,<code>data type</code>,<code>comment</code></td>
+</tr>
+<tr>
+<td>router</td>
+<td>Failure response that separated by spaces. <code>path</code>,<code>[httpMethod]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p><a href="https://github.com/swaggo/swag/tree/master/example/celler/controller" _target="blank">celler/controller</a></p>
+<h2 id="limitation">Limitation</h2>
+<ul>
+<li>Not supported for cross-package models. Only search in project root folder. <a href="https://github.com/swaggo/swag/issues/39" _target="blank">See #39</a></li>
+</ul>
+<h2 id="mime-types">Mime Types</h2>
+<table>
+<thead>
+<tr>
+<th>Mime Type</th>
+<th>annotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application/json</td>
+<td>application/json, json</td>
+</tr>
+<tr>
+<td>text/xml</td>
+<td>text/xml, xml</td>
+</tr>
+<tr>
+<td>text/plain</td>
+<td>text/plain, plain</td>
+</tr>
+<tr>
+<td>html</td>
+<td>text/html, html</td>
+</tr>
+<tr>
+<td>multipart/form-data</td>
+<td>multipart/form-data, mpfd</td>
+</tr>
+<tr>
+<td>application/x-www-form-urlencoded</td>
+<td>application/x-www-form-urlencoded, x-www-form-urlencoded</td>
+</tr>
+<tr>
+<td>application/vnd.api+json</td>
+<td>application/vnd.api+json, json-api</td>
+</tr>
+<tr>
+<td>application/x-json-stream</td>
+<td>application/x-json-stream, json-stream</td>
+</tr>
+<tr>
+<td>application/octet-stream</td>
+<td>application/octet-stream, octet-stream</td>
+</tr>
+<tr>
+<td>image/png</td>
+<td>image/png, png</td>
+</tr>
+<tr>
+<td>image/jpeg</td>
+<td>image/jpeg, jpeg</td>
+</tr>
+<tr>
+<td>image/gif</td>
+<td>image/gif, gif</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security">Security</h2>
+<p>General API info.</p>
+<pre><code class="lang-go"><span class="hljs-comment">// @securityDefinitions.basic BasicAuth</span>
+
+<span class="hljs-comment">// @securitydefinitions.oauth2.application OAuth2Application</span>
+<span class="hljs-comment">// @tokenUrl https://example.com/oauth/token</span>
+<span class="hljs-comment">// @scope.write Grants write access</span>
+<span class="hljs-comment">// @scope.admin Grants read and write access to administrative information</span>
+</code></pre>
+<p>Each API operation.</p>
+<pre><code class="lang-go"><span class="hljs-comment">// @Security ApiKeyAuth</span>
+</code></pre>
+<p>Make it AND condition</p>
+<pre><code class="lang-go"><span class="hljs-comment">// @Security ApiKeyAuth</span>
+<span class="hljs-comment">// @Security OAuth2Application[write, admin]</span>
+</code></pre>
+<h2 id="param-type">Param Type</h2>
+<ul>
+<li>object (struct)</li>
+<li>string (string)</li>
+<li>integer (int, uint, uint32, uint64)</li>
+<li>number (float32)</li>
+<li>boolean (bool)</li>
+<li>array</li>
+</ul>
+<h2 id="data-type">Data Type</h2>
+<ul>
+<li>string (string)</li>
+<li>integer (int, uint, uint32, uint64)</li>
+<li>number (float32)</li>
+<li>boolean (bool)</li>
+<li>user defined struct</li>
+</ul>
+<h2 id="attribute">Attribute</h2>
+<pre><code class="lang-go"><span class="hljs-comment">// @Param enumstring query string false &quot;string enums&quot; Enums(A, B, C)</span>
+<span class="hljs-comment">// @Param enumint query int false &quot;int enums&quot; Enums(1, 2, 3)</span>
+<span class="hljs-comment">// @Param enumnumber query number false &quot;int enums&quot; Enums(1.1, 1.2, 1.3)</span>
+<span class="hljs-comment">// @Param string query string false &quot;string valid&quot; minlength(5) maxlength(10)</span>
+<span class="hljs-comment">// @Param int query int false &quot;int valid&quot; mininum(1) maxinum(10)</span>
+<span class="hljs-comment">// @Param default query string false &quot;string default&quot; default(A)</span>
+</code></pre>
+<h3 id="available">Available</h3>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="parameterDefault"></a>default</td>
+<td style="text-align:center">*</td>
+<td>Declares the value of the parameter that the server will use if none is provided, for example a &quot;count&quot; to control the number of results per page might default to 100 if not supplied by the client in the request. (Note: &quot;default&quot; has no meaning for required parameters.)  See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-6.2" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-6.2</a>. Unlike JSON Schema this value MUST conform to the defined <a href="#parameterType"><code>type</code></a> for this parameter.</td>
+</tr>
+<tr>
+<td><a name="parameterMaximum"></a>maximum</td>
+<td style="text-align:center"><code>number</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.1.2" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.1.2</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterMinimum"></a>minimum</td>
+<td style="text-align:center"><code>number</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.1.3" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.1.3</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterMaxLength"></a>maxLength</td>
+<td style="text-align:center"><code>integer</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.2.1" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.2.1</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterMinLength"></a>minLength</td>
+<td style="text-align:center"><code>integer</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.2.2" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.2.2</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterEnums"></a>enums</td>
+<td style="text-align:center">[*]</td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.5.1" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.5.1</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="future">Future</h3>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="parameterFormat"></a>format</td>
+<td style="text-align:center"><code>string</code></td>
+<td>The extending format for the previously mentioned <a href="#parameterType"><code>type</code></a>. See <a href="#dataTypeFormat">Data Type Formats</a> for further details.</td>
+</tr>
+<tr>
+<td><a name="parameterMultipleOf"></a>multipleOf</td>
+<td style="text-align:center"><code>number</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.1.1" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.1.1</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterPattern"></a>pattern</td>
+<td style="text-align:center"><code>string</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.2.3" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.2.3</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterMaxItems"></a>maxItems</td>
+<td style="text-align:center"><code>integer</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.3.2" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.3.2</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterMinItems"></a>minItems</td>
+<td style="text-align:center"><code>integer</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.3.3" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.3.3</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterUniqueItems"></a>uniqueItems</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td>See <a href="https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.3.4" _target="blank">https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.3.4</a>.</td>
+</tr>
+<tr>
+<td><a name="parameterCollectionFormat"></a>collectionFormat</td>
+<td style="text-align:center"><code>string</code></td>
+<td>Determines the format of the array if type array is used. Possible values are: <ul><li>`csv` - comma separated values `foo,bar`. </li><li>`ssv` - space separated values `foo bar`. </li><li>`tsv` - tab separated values `foo\tbar`. </li><li>`pipes` - pipe separated values <code>foo|bar</code>. </li><li>`multi` - corresponds to multiple parameter instances instead of multiple values for a single instance `foo=bar&amp;foo=baz`. This is valid only for parameters [`in`](#parameterIn) &quot;query&quot; or &quot;formData&quot;. </li></ul> Default value is <code>csv</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips">TIPS</h2>
+<h3 id="user-defined-structure-with-an-array-type">User defined structure with an array type</h3>
+<pre><code class="lang-go"><span class="hljs-comment">// @Success 200 {array} model.Account &lt;-- This is a user defined struct.</span>
+</code></pre>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> model
+
+<span class="hljs-keyword">type</span> Account <span class="hljs-keyword">struct</span> {
+    ID   <span class="hljs-keyword">int</span>    <span class="hljs-string">`json:&quot;id&quot; example:&quot;1&quot;`</span>
+    Name <span class="hljs-keyword">string</span> <span class="hljs-string">`json:&quot;name&quot; example:&quot;account name&quot;`</span>
+}
+</code></pre>
+<h3 id="use-multiple-path-params">Use multiple path params</h3>
+<pre><code class="lang-go"><span class="hljs-comment">/// ...</span>
+<span class="hljs-comment">// @Param group_id path int true &quot;Group ID&quot;</span>
+<span class="hljs-comment">// @Param account_id path int true &quot;Account ID&quot;</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-comment">// @Router /examples/groups/{group_id}/accounts/{account_id} [get]</span>
+</code></pre>
+<h3 id="example-value-of-struct">Example value of struct</h3>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> Account <span class="hljs-keyword">struct</span> {
+    ID   <span class="hljs-keyword">int</span>    <span class="hljs-string">`json:&quot;id&quot; example:&quot;1&quot;`</span>
+    Name <span class="hljs-keyword">string</span> <span class="hljs-string">`json:&quot;name&quot; example:&quot;account name&quot;`</span>
+    PhotoUrls []<span class="hljs-keyword">string</span> <span class="hljs-string">`json:&quot;photo_urls&quot; example:&quot;http://test/image/1.jpg,http://test/image/2.jpg&quot;`</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="general_api_info.html" class="navigation navigation-prev " aria-label="Previous page: General API Info">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../cli/" class="navigation navigation-next " aria-label="Next page: CLI">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API Operation","level":"1.2.2","depth":2,"next":{"title":"CLI","level":"1.3","depth":1,"path":"cli/README.md","ref":"cli/README.md","articles":[]},"previous":{"title":"General API Info","level":"1.2.1","depth":2,"path":"declarative_comments_format/general_api_info.md","ref":"declarative_comments_format/general_api_info.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.0.x","theme":"default","variables":{},"plugins":["-sharing","edit-link@2.0.x","github@2.0.x","anchorjs"],"pluginsConfig":{"edit-link":{"base":"https://github.com/swaggo/swaggo.io/edit/master/README.md","label":"Edit"},"github":{"url":"https://github.com/swaggo/swag"},"anchorjs":{"icon":"#","selector":"h1,h2,h3,h4,h5","placement":"right","visible":"always"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"declarative_comments_format/api_operation.md","mtime":"2018-08-09T06:09:36.672Z","type":"markdown"},"gitbook":{"version":"3.0.3","time":"2018-08-09T06:10:45.480Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
